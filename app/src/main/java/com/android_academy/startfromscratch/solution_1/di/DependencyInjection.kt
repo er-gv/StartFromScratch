@@ -1,6 +1,6 @@
 package com.android_academy.startfromscratch.solution_1.di
 
-import com.android_academy.network.di.MockNetworkDependency
+import com.ergv.learning.ext_network.di.MockNetworkDependency
 import com.android_academy.startfromscratch.solution_1.providers.MovieNetworkProvider
 import com.android_academy.startfromscratch.solution_1.providers.MovieNetworkProviderImpl
 import java.util.concurrent.Executors

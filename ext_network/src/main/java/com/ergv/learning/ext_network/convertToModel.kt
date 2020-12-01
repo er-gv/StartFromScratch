@@ -1,6 +1,6 @@
 package com.android_academy.db
 
-import com.ergv.learning.ext_network.di.NetworkingConstants
+import com.ergv.learning.ext_network.NetworkingConstants
 
 object MovieModelConverter {
 

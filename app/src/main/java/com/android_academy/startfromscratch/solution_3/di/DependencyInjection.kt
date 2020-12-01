@@ -1,7 +1,7 @@
 package com.android_academy.startfromscratch.solution_3.di
 
 import com.android_academy.db.di.MockDBDependency
-import com.android_academy.network.di.MockNetworkDependency
+import com.ergv.learning.ext_network.di.MockNetworkDependency
 import com.android_academy.startfromscratch.MoviesApp
 import com.android_academy.startfromscratch.solution_3.providers.MovieDatabaseProvider
 import com.android_academy.startfromscratch.solution_3.providers.MovieDatabaseProviderImpl

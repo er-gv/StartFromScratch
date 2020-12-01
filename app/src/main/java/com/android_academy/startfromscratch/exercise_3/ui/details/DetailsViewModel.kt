@@ -39,7 +39,7 @@ class DetailsViewModelImpl(private val moviesRepository: MoviesRepository) : Vie
         }
     }
 
-    class DetailsViewModelFactory(private val moviesRepository: com.android_academy.startfromscratch.solution_3.repository.MoviesRepository) : ViewModelProvider.Factory {
+    class DetailsViewModelFactory(private val moviesRepository: MoviesRepository) : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(DetailsViewModelImpl::class.java)) {
                 return DetailsViewModelImpl(moviesRepository) as T

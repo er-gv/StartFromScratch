@@ -9,8 +9,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.android_academy.db.Movie
 import com.android_academy.startfromscratch.R
 import com.android_academy.startfromscratch.exercise_3.di.DependencyInjection
-import com.android_academy.startfromscratch.exercise_3.ui.mainMovies.MoviesViewModelFactory
-import com.android_academy.startfromscratch.exercise_3.ui.mainMovies.MoviesViewModelImpl
+//import com.android_academy.startfromscratch.exercise_3.ui.mainMovies.MoviesViewModelFactory
+//import com.android_academy.startfromscratch.exercise_3.ui.mainMovies.MoviesViewModelImpl
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.details_fragment.*
 
@@ -34,7 +34,7 @@ class DetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val factory = DetailsViewModelFactory(DependencyInjection.moviesRepo)
+        val factory = DetailsViewModelImpl.DetailsViewModelFactory(DependencyInjection.moviesRepo)
         viewModel = ViewModelProvider(this, factory).get(DetailsViewModelImpl::class.java)
         return inflater.inflate(R.layout.details_fragment, container, false)
     }

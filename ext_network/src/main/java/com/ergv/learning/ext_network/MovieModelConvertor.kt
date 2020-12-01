@@ -2,7 +2,7 @@ package com.android_academy.db.di
 
 import com.android_academy.db.Movie
 import com.android_academy.db.MoviesListResult
-import com.ergv.learning.ext_network.di.NetworkingConstants.POSTER_BASE_URL
+import com.ergv.learning.ext_network.NetworkingConstants.POSTER_BASE_URL
 
 object MovieModelConverter {
 

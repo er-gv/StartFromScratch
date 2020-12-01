@@ -1,7 +1,7 @@
 package com.android_academy.startfromscratch.solution_1.providers
 
-import com.android_academy.network.MoviesListResult
-import com.android_academy.network.di.MockMovieService
+import com.android_academy.db.MoviesListResult
+import com.ergv.learning.ext_network.di.MockMovieService
 
 interface MovieNetworkProvider {
     fun getMovies(): MoviesListResult?

@@ -1,6 +1,5 @@
 package com.android_academy.startfromscratch.solution_4.di
 
-import android.app.Application
 import com.android_academy.db.di.DBDependency
 import com.ergv.learning.ext_network.di.NetworkDependency
 import com.android_academy.startfromscratch.MoviesApp
