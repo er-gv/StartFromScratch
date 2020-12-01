@@ -1,8 +1,8 @@
-package com.android_academy.startfromscratch.exercise_1.network
+package com.ergv.learning.ext_network.di
 
+import com.android_academy.db.MoviesListResult
 import com.google.gson.Gson
 
-//TODO Exercise #1 move it to network module and replace import in DependencyInjection
 object MockNetworkDependency {
     val movieService = object : MockMovieService {
         override fun latestMovies(year: Int, apiKey: String): MoviesListResult {

@@ -1,7 +1,7 @@
 package com.android_academy.startfromscratch.exercise_5.providers
 
-import com.android_academy.network.MoviesListResult
-import com.android_academy.network.MoviesService
+import com.android_academy.db.MoviesListResult
+import com.ergv.learning.ext_network.MoviesService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

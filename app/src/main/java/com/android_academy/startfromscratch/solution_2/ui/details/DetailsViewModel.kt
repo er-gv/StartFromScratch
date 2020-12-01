@@ -15,7 +15,7 @@ interface DetailsViewModel {
 }
 
 class DetailsViewModelImpl(private val moviesNetworkProvider: MovieNetworkProvider) : ViewModel(),
-    DetailsViewModel {
+    DetailsViewModel, com.android_academy.startfromscratch.exercise_2.ui.details.DetailsViewModel {
 
     private val executors = DependencyInjection.viewModelExecutor
 

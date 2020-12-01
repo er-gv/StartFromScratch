@@ -1,3 +1,4 @@
+include ':ext_network'
 include ':app'
 include ':db'
 include ':network'

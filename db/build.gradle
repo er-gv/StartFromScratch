@@ -9,7 +9,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 28
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -34,7 +34,8 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':network')
+    //implementation project(path: ':network')
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.room:room-runtime:2.2.5"
     kapt "androidx.room:room-compiler:2.2.5"
@@ -43,4 +44,5 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.0"
     implementation "org.koin:koin-android:2.1.6"
     implementation "org.koin:koin-androidx-viewmodel:2.1.6"
+    implementation 'com.google.code.gson:gson:2.8.6'
 }

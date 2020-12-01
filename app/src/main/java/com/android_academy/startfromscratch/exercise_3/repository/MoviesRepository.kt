@@ -20,8 +20,8 @@ class MoviesRepositoryImpl(
 ) : MoviesRepository {
 
     override fun getMovies(callback: (List<Movie>?) -> Unit) {
-        //TODO call for getMoviesFromServer
-        //TODO after movies in db call for getMoviesFromDB
+        getMoviesFromServer(callback)
+        getMoviesFromDataBase(callback)
         //Notice that it's not waiting one for each other. It's open two new threads and do it concurrently
     }
 

@@ -1,6 +1,5 @@
-package com.android_academy.startfromscratch.exercise_1.network
+package com.ergv.learning.ext_network
 
-//TODO Exercise #1 move it to separate file and change import in MockMovieService
 object NetworkingConstants  {
     const val POSTER_BASE_URL = "https://image.tmdb.org/t/p/w342"
 

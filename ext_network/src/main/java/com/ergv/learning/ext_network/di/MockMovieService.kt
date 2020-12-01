@@ -1,11 +1,12 @@
-package com.android_academy.startfromscratch.exercise_1.network
+package com.ergv.learning.ext_network.di
 
-//TODO Exercise #1 move it to separate module and change dependency to use it from the network module
+import com.android_academy.db.MoviesListResult
+import com.ergv.learning.ext_network.NetworkingConstants
+
 interface MockMovieService {
     fun latestMovies(year: Int = 2020, apiKey: String = NetworkingConstants.apiKey): MoviesListResult
 }
 
-//TODO Exercise #1 move it as well to network module
 const val mockData = "{\n" +
         "  \"page\": 1,\n" +
         "  \"total_results\": 10000,\n" +

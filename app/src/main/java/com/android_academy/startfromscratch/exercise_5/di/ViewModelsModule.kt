@@ -14,11 +14,15 @@ val viewModelsModule = module {
     viewModel {
         Log.d("viewModelsModule", "creating viewModel: MoviesViewModelImpl")
         MoviesViewModelImpl(
-            //TODO change it to "get()" method. It will find what the right class and dependecy to it
-            moviesRepository = Object() as MoviesRepository
+            //DONE change it to "get()" method. It will find what the right class and dependecy to it
+            moviesRepository = get()
         )
     }
 
-    //TODO Add here viewModel block to provide our DetailsViewModelImpl with moviesRepository dependency
-    //see viewModel above as a reference
+    //DONE Add here viewModel block to provide our DetailsViewModelImpl with moviesRepository dependency
+    viewModel {
+        DetailsViewModelImpl(
+            moviesRepository = get()
+        )
+    }
 }

@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
 interface MovieDatabaseProvider {
 
     fun getAll(): Flow<List<Movie>?>
-    fun getMovie(movieId : Int): Movie?
+    suspend fun getMovie(movieId : Int): Movie?
     suspend fun insertAll(movies: List<Movie>)
     suspend fun deleteAll() = Unit
 }
@@ -20,12 +20,16 @@ class MovieDatabaseProviderImpl(private val dao: MovieDao) : MovieDatabaseProvid
         return dao.getAll()
     }
 
-    override fun getMovie(movieId: Int): Movie?  {
-        //TODO add withContext + Dispatchers.IO for mainThreadSafety
-        return dao.getMovie(movieId)
-    }
+    override suspend fun getMovie(movieId: Int): Movie?
+    = withContext(Dispatchers.IO) {dao.getMovie(movieId)}
+//DONE add withContext + Dispatchers.IO for mainThreadSafety
+
 
     override suspend fun insertAll(movies: List<Movie>) = withContext(Dispatchers.IO) {
         dao.insertAll(movies)
+    }
+
+    override suspend fun deleteAll() = withContext(Dispatchers.IO) {
+        dao.deleteAll()
     }
 }

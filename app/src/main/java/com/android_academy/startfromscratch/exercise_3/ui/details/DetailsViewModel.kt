@@ -5,6 +5,7 @@ import com.android_academy.db.Movie
 import com.android_academy.startfromscratch.exercise_3.di.DependencyInjection
 import com.android_academy.startfromscratch.exercise_3.repository.MoviesRepository
 import com.android_academy.startfromscratch.exercise_3.ui.mainMovies.MoviesViewModelImpl
+import com.android_academy.startfromscratch.solution_3.ui.details.DetailsViewModelImpl
 import kotlinx.coroutines.launch
 
 interface DetailsViewModel {
@@ -27,19 +28,23 @@ class DetailsViewModelImpl(private val moviesRepository: MoviesRepository) : Vie
 
     override fun loadMovie(movieId: Int) {
         executors.execute {
-            //TODO Call for getMovie(movieId) on Repository
-            //TODO Update live data on new received movie
+            //DONE Call for getMovie(movieId) on Repository
+            moviesRepository.getMovie(movieId) { movie ->
+                movie?.let {
+                    movieLiveData.postValue(it)
+                }
+            }
             //notice that now our data will come from DB and not from network.
             //since our LiveData story movie it will cached for next call (e.g. after activity recreation)
         }
     }
-}
 
-class DetailsViewModelFactory(private val moviesRepository: MoviesRepository) : ViewModelProvider.Factory {
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(DetailsViewModelImpl::class.java)) {
-            return DetailsViewModelImpl(moviesRepository) as T
+    class DetailsViewModelFactory(private val moviesRepository: com.android_academy.startfromscratch.solution_3.repository.MoviesRepository) : ViewModelProvider.Factory {
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            if (modelClass.isAssignableFrom(DetailsViewModelImpl::class.java)) {
+                return DetailsViewModelImpl(moviesRepository) as T
+            }
+            throw IllegalArgumentException("Unknown ViewModel class")
         }
-        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }
